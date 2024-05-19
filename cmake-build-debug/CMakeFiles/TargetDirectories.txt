@@ -1,0 +1,3 @@
+C:/Users/marci/CLionProjects/solomonik/cmake-build-debug/CMakeFiles/solomonik.dir
+C:/Users/marci/CLionProjects/solomonik/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marci/CLionProjects/solomonik/cmake-build-debug/CMakeFiles/rebuild_cache.dir
