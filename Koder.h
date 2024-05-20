@@ -16,6 +16,10 @@ public:
     Koder();
 
     Galois codePolynomial( const Galois &msg);
+    std::string codetostring(const Galois &msg);
+    int ASCIItoint03(char a);
+    int ASCIItoint48(char a);
+    Galois ASCIIpairtoPolynomial(char a, char b);
 
     Galois ASCIItoPolynomial(char a);
 
