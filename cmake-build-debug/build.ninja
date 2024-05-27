@@ -67,6 +67,12 @@ build CMakeFiles/solomonik.dir/Koder.cpp.obj: CXX_COMPILER__solomonik_unscanned_
   OBJECT_DIR = CMakeFiles\solomonik.dir
   OBJECT_FILE_DIR = CMakeFiles\solomonik.dir
 
+build CMakeFiles/solomonik.dir/Dekoder.cpp.obj: CXX_COMPILER__solomonik_unscanned_Debug C$:/Users/marci/CLionProjects/solomonik/Dekoder.cpp || cmake_object_order_depends_target_solomonik
+  DEP_FILE = CMakeFiles\solomonik.dir\Dekoder.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\solomonik.dir
+  OBJECT_FILE_DIR = CMakeFiles\solomonik.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target solomonik
@@ -75,7 +81,7 @@ build CMakeFiles/solomonik.dir/Koder.cpp.obj: CXX_COMPILER__solomonik_unscanned_
 #############################################
 # Link the executable solomonik.exe
 
-build solomonik.exe: CXX_EXECUTABLE_LINKER__solomonik_Debug CMakeFiles/solomonik.dir/main.cpp.obj CMakeFiles/solomonik.dir/Galois.cpp.obj CMakeFiles/solomonik.dir/Koder.cpp.obj
+build solomonik.exe: CXX_EXECUTABLE_LINKER__solomonik_Debug CMakeFiles/solomonik.dir/main.cpp.obj CMakeFiles/solomonik.dir/Galois.cpp.obj CMakeFiles/solomonik.dir/Koder.cpp.obj CMakeFiles/solomonik.dir/Dekoder.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\solomonik.dir

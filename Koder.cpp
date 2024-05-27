@@ -22,13 +22,13 @@ Galois Koder::codePolynomial( const Galois &msg) {
 
 
     M.scale(10);
-    M.XXpodziel(generator);
+    M=M.XXpodziel(generator);
 
     C=msg;
     C.scale(10);
     C.Xdodaj(M);
 
-
+    C.minimalize();
 
 
 return C;
@@ -75,7 +75,7 @@ int Koder::ASCIItoint48(char a) {
 
 Galois Koder::ASCIIpairtoPolynomial(char a, char b) {
 
-    Galois g= Galois(std::vector<int>{255,255,255,255},3);
+    Galois g= Galois(std::vector<int>{255,255,255,255,255},4);
     int a03 = ASCIItoint03(a);
     int a48 = ASCIItoint48(a);
     int b03 = ASCIItoint03(b);
@@ -89,13 +89,23 @@ Galois Koder::ASCIIpairtoPolynomial(char a, char b) {
 }
 
 
-Galois Koder::ASCIItoPolynomial(char a){
+std::string Koder::code(std::string msg) {
+
+    std::string transmision ="";
+
+    int len = msg.length();
 
 
-    Galois g;
-    g.wspolczynniki.resize(5);
+    for(int i =0;i<len;i++)
+    {
+        char a=msg[len-i];
+        char b=msg[len-i-1];
 
+        Galois pair = ASCIIpairtoPolynomial(a,b);
+        transmision+= codetostring(pair);
+        pair.~Galois();
 
+    }
 
-    return g;
+    return transmision;
 }

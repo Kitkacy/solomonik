@@ -32,6 +32,8 @@ public:
 
     Galois XXpodziel(const Galois &g);
 
+    void minimalize();
+
 
 };
 

@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(solomonik main.cpp
         Galois.cpp
         Koder.h
-        Koder.cpp)
+        Koder.cpp
+        Dekoder.h
+        Dekoder.cpp)

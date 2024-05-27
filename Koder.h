@@ -21,7 +21,7 @@ public:
     int ASCIItoint48(char a);
     Galois ASCIIpairtoPolynomial(char a, char b);
 
-    Galois ASCIItoPolynomial(char a);
+   std::string code(std::string msg);
 
 
 

@@ -142,6 +142,7 @@ void Galois::Xdodaj(const Galois &g)
     }
     stopien = maxStopien;
 
+    minimalize();
 }
 
 void Galois::odejmij(const Galois &w)
@@ -489,6 +490,9 @@ Galois Galois::XXpodziel(const Galois &g) {
 
     }
 
+iloraz.minimalize();
+    reszta.minimalize();
+
 
 *this = iloraz;
 
@@ -500,5 +504,19 @@ Galois Galois::XXpodziel(const Galois &g) {
 Galois::~Galois()
 {
     wspolczynniki.clear();
+
+}
+
+void Galois::minimalize(){
+
+    while(wspolczynniki[stopien]==255)
+    {
+
+        wspolczynniki.resize(stopien);
+        stopien=stopien-1;
+
+
+    }
+
 
 }

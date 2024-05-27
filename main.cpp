@@ -1,43 +1,48 @@
 #include <iostream>
 #include "Galois.hpp"
 #include "Koder.h"
+#include "Dekoder.h"
 #include <vector>
 
 int main() {
 
 
+ Galois msg = Galois(std::vector<int>{1,2,3,4,5},4);
+
+ Koder code;
+ Dekoder decode;
+
+ std::cout<<"Wiadomosc"<<std::endl;
+ msg.wyswietl();
 
 
-    Galois a(std::vector<int>{0,1},1);
-
-Koder code;
-a=code.codePolynomial(a);
-a.wyswietl();
-std::string s = code.codetostring(a);
-std::cout<<s<<std::endl;
-std::cout<<std::endl;
+ Galois coded=code.codePolynomial(msg);
     std::cout<<std::endl;
+ std::cout<<"Zakodowana wiadomosc"<<std::endl;
+ coded.wyswietl();
+ std::cout<<std::endl;
+
+Galois received = coded;
+ received.wspolczynniki[8]=255;
+
+ received.wspolczynniki[6]=255;
+
+ Galois syndrom=decode.syndrom(received);
+
+    std::cout<<"Syndrom"<<std::endl;
+    syndrom.wyswietl();
+
+    Galois repaired = decode.singlerepair(received);
+
     std::cout<<std::endl;
+    std::cout<<"Naprawiony"<<std::endl;
+    repaired.wyswietl();
 
-    int i = code.ASCIItoint03('A');
-    int j = code.ASCIItoint48('A');
-    std::cout<<i<<std::endl;
-    std::cout<<j<<std::endl;
+ repaired.Xdodaj(coded);
 
-     i = code.ASCIItoint03('B');
-     j = code.ASCIItoint48('B');
-    std::cout<<i<<std::endl;
-    std::cout<<j<<std::endl;
-
-    a=code.ASCIIpairtoPolynomial('A','B');
-
-    a.wyswietl();
-    a=code.codePolynomial(a);
-    a.wyswietl();
-    std::string pol = code.codetostring(a);
-    std::cout<<pol<<std::endl;
-
-
+    std::cout<<std::endl;
+    std::cout<<"XOR"<<std::endl;
+    repaired.wyswietl();
 
 
 
