@@ -128,8 +128,26 @@ std::string Dekoder::decode(std::string msg) {
         part= decodepol(part);
         part = getmsg(part);
 
+        std::string plus = msgtoASCII(part);
+        if(plus[0]=='`')
+        {
+            plus[0]='o';
+        }
+        if(plus[1]=='`')
+        {
+            plus[1]='o';
+        }
+        if(plus[0]=='@')
+        {
+            plus[0]='O';
+        }
+        if(plus[1]=='@')
+        {
+            plus[1]='O';
+        }
 
-        out= msgtoASCII(part)+out;
+
+        out= plus+out;
 
 
 

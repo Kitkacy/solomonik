@@ -56,7 +56,7 @@ return word;
 int Koder::ASCIItoint03(char a) {
 
     int b = int(a);
-  //  std::cout<<b<<std::endl;
+
 
     std::string s=std::bitset<8>(a).to_string();
 
