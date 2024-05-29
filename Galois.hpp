@@ -2,6 +2,7 @@
 #define __Galois_H__
 
 #include <vector>
+#include <string_view>
 
 class Galois
 {
@@ -33,6 +34,9 @@ public:
     Galois XXpodziel(const Galois &g);
 
     void minimalize();
+   void rotacja(std::string_view kierunek, int przesuniecie);
+
+   int weight();
 
 
 };

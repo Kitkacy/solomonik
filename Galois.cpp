@@ -520,3 +520,40 @@ void Galois::minimalize(){
 
 
 }
+void Galois::rotacja(std::string_view kierunek, int przesuniecie)
+{
+    if (wspolczynniki.empty())
+    {
+        return;
+    }
+
+    przesuniecie %= wspolczynniki.size();
+
+    if (kierunek == "p")
+    {
+        std::reverse(wspolczynniki.begin(), wspolczynniki.end());
+        std::rotate(wspolczynniki.begin(), wspolczynniki.begin() + przesuniecie, wspolczynniki.end());
+        std::reverse(wspolczynniki.begin(), wspolczynniki.end());
+    }
+    else if (kierunek == "l")
+    {
+        std::rotate(wspolczynniki.begin(), wspolczynniki.begin() + przesuniecie, wspolczynniki.end());
+    }
+}
+
+
+int Galois::weight() {
+
+
+    int licznik=0;///waga hamminga
+    for(int i=0;i<stopien+1;i++)
+    {
+        if(wspolczynniki[i]!=255)
+        {
+
+            licznik++;
+        }
+    }
+
+    return licznik;
+}

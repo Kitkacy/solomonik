@@ -42,8 +42,12 @@ std::string Koder::codetostring(const Galois &msg) {
 std::string word = std::bitset<4>(m.wspolczynniki[m.stopien]).to_string();
 for(int i=msg.stopien-1;i>=0;i--)
 {
-  //  word+=" ";
+   // word+=" ";
     word=word+std::bitset<4>(m.wspolczynniki[i]).to_string();
+}
+while(word.length()<60)
+{
+    word="1111"+word;
 }
 
 return word;
@@ -52,11 +56,14 @@ return word;
 int Koder::ASCIItoint03(char a) {
 
     int b = int(a);
+  //  std::cout<<b<<std::endl;
 
     std::string s=std::bitset<8>(a).to_string();
-    std::string a03 = s.substr(0,4);
-    int A03 = std::stoi(a03, nullptr, 2);
 
+    std::string a03 = s.substr(0,4);
+   // std::cout<<a03<<std::endl;
+    int A03 = std::stoi(a03, nullptr, 2);
+   // std::cout<<A03<<std::endl;
     return A03;
 }
 
@@ -95,17 +102,39 @@ std::string Koder::code(std::string msg) {
 
     int len = msg.length();
 
+if(len>0){
 
-    for(int i =0;i<len;i++)
+
+
+
+    for(int i =0;i<=len;i=i+2)
     {
-        char a=msg[len-i];
-        char b=msg[len-i-1];
 
+
+
+            char a;
+
+            if(len-i-1<0)
+            {
+                a=' ';
+            }
+            else{
+                a=msg[len-i-1];
+            }
+
+        char b=msg[len-i];
+       // std::cout<<"x"<<std::endl;
         Galois pair = ASCIIpairtoPolynomial(a,b);
-        transmision+= codetostring(pair);
-        pair.~Galois();
+        pair= codePolynomial(pair);
+       // pair.wyswietl();
+
+
+
+        transmision= codetostring(pair) +transmision;
+
+
 
     }
-
+}
     return transmision;
 }

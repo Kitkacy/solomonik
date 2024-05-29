@@ -14,9 +14,17 @@
 
      Dekoder();
 
-     Galois decodepol(const Galois &word);
+
      Galois syndrom(const Galois &word);
      Galois singlerepair(const Galois &word);
+
+     Galois decodepol(const Galois &word);
+     Galois getmsg(const Galois &word);
+     std::string msgtoASCII(const Galois &word);
+     Galois stringtopol(std::string msg);
+
+     std::string decode(std::string msg);
+
 
 };
 
