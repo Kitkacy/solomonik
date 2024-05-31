@@ -2,6 +2,7 @@
 #include "Galois.hpp"
 #include "Koder.h"
 #include "Dekoder.h"
+#include "noise.h"
 #include <vector>
 
 int main() {
@@ -48,14 +49,22 @@ int main() {
 }
 
 
-std::string aa = code.code("DOOooefensive secretions");
+std::string aa = code.code("Do");
 
+    std::string aaa = aa;
+    noise er;
 
+aa=er.randnoise(aa,20);
 
+std::string bb=decode.decodetostring(aa);
+std::string rec=decode.decode(aa);
+    std::cout<<"in: "<<aaa<<std::endl;
+    std::cout<<"out: "<<rec<<std::endl;
 
-std::string bb=decode.decode(aa);
-    std::cout<<aa<<std::endl;
-    std::cout<<bb<<std::endl;
+    if(aaa==bb)
+    {
+        std::cout<<"git"<<std::endl;
+    }
 
 
     return 0;

@@ -5,6 +5,8 @@
 #include <iostream>
 #include <bitset>
 #include "Dekoder.h"
+#include "Koder.h"
+
 Dekoder::Dekoder() {
     generator =Galois(std::vector<int>{10 ,1 ,6, 1, 2, 14, 6 ,9, 3, 2, 0},10);
 
@@ -144,7 +146,31 @@ std::string Dekoder::decode(std::string msg) {
 }
 
 std::string Dekoder::decodetostring(std::string msg) {
+    Koder tostr;
     std::string out;
     int len = msg.length();
 
+    for(int i=0;i<(len/60);i++)
+    {
+
+
+        std::string poly = msg.substr(len-i*60-60,60);
+
+        Galois part = stringtopol(poly);
+
+
+        part= decodepol(part);
+
+
+        std::string plus = tostr.codetostring(part);
+
+
+
+        out= plus+out;
+
+
+
+    }
+
+    return out;
 }

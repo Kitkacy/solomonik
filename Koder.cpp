@@ -114,7 +114,7 @@ if(len>0){
 
 
 
-    for(int i =0;i<=len;i=i+2)
+    for(int i =1;i<=len;i=i+2)
     {
 
 
