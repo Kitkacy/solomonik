@@ -24,6 +24,7 @@
      Galois stringtopol(std::string msg);
 
      std::string decode(std::string msg);
+     std::string decodetostring(std::string msg);
 
 
 };

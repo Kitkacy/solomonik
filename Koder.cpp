@@ -64,6 +64,10 @@ int Koder::ASCIItoint03(char a) {
    // std::cout<<a03<<std::endl;
     int A03 = std::stoi(a03, nullptr, 2);
    // std::cout<<A03<<std::endl;
+   if(a03=="1111")
+   {
+       A03=255;
+   }
     return A03;
 }
 
@@ -74,7 +78,10 @@ int Koder::ASCIItoint48(char a) {
     std::string s=std::bitset<8>(a).to_string();
     std::string a48 = s.substr(4,8);
     int A48 = std::stoi(a48, nullptr, 2);
-
+    if(a48=="1111")
+    {
+        A48=255;
+    }
     return A48;
 }
 

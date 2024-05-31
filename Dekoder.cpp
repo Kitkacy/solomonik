@@ -118,7 +118,7 @@ std::string Dekoder::decode(std::string msg) {
 
     for(int i=0;i<(len/60);i++)
     {
-        std::cout<<i<<std::endl;
+
 
         std::string poly = msg.substr(len-i*60-60,60);
 
@@ -129,22 +129,7 @@ std::string Dekoder::decode(std::string msg) {
         part = getmsg(part);
 
         std::string plus = msgtoASCII(part);
-        if(plus[0]=='`')
-        {
-            plus[0]='o';
-        }
-        if(plus[1]=='`')
-        {
-            plus[1]='o';
-        }
-        if(plus[0]=='@')
-        {
-            plus[0]='O';
-        }
-        if(plus[1]=='@')
-        {
-            plus[1]='O';
-        }
+
 
 
         out= plus+out;
@@ -156,4 +141,10 @@ std::string Dekoder::decode(std::string msg) {
 
 
     return out;
+}
+
+std::string Dekoder::decodetostring(std::string msg) {
+    std::string out;
+    int len = msg.length();
+
 }
