@@ -15,6 +15,8 @@ public:
     void testcorrect(int bits, int n,std::string msg);
 
     void testrandS(int symbols, int n, std::string msg);
+    void testinfS(int symbols, int n, std::string msg);
+    void testcorrectS(int symbols, int n, std::string msg);
 
 
 };

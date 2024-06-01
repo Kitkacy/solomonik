@@ -50,5 +50,5 @@ int main() {
 
 
     Tester test;
-    test.testrandS(5, 100, "AB");
+    test.testcorrectS(5, 1000, "AB");
 }
