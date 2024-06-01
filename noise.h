@@ -16,6 +16,8 @@ public:
     std::string correctnoise(std::string input,int bits);
     bool isIn(int* tab, int n, int key);
 
+
+
 };
 
 

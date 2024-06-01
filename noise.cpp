@@ -24,7 +24,7 @@ std::string noise::randnoise(std::string input, int bits){
             r = rand()%len;
             list[i]=r;
         }
-std::cout<<r<<std::endl;
+
         if(output[r]=='1')
         {
             output[r]='0';
@@ -55,7 +55,7 @@ std::string noise::infnoise(std::string input, int bits){
 
         while(isIn(list,i,r))
         {
-            r = rand()%bits;
+            r = rand()%20;
             list[i]=r;
         }
         if(output[r]=='1')
@@ -88,7 +88,7 @@ std::string noise::correctnoise(std::string input, int bits){
 
         while(isIn(list,i,r))
         {
-            r = rand()%bits;
+            r = rand()%40+20;
             list[i]=r;
         }
         if(output[r]=='1')

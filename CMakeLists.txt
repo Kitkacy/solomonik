@@ -10,4 +10,6 @@ add_executable(solomonik main.cpp
         Dekoder.h
         Dekoder.cpp
         noise.h
-        noise.cpp)
+        noise.cpp
+        Tester.h
+        Tester.cpp)
